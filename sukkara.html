@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tap for a Surprise 🎀</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffe6f2, #ffb3d9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+  color: #6a1b9a;
+}
+
+.card {
+  background: #ffffffdd;
+  padding: 30px;
+  border-radius: 25px;
+  border: 3px dashed #ff69b4;
+  max-width: 90%;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.tap {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  opacity: 0.7;
+}
+</style>
+</head>
+
+<body onclick="nextPage()">
+
+<div class="card" id="content">
+  <h1>🎀 Tap the Screen 🎀</h1>
+  <p>A little New Year surprise is waiting…</p>
+  <div class="tap">👆 Tap anywhere</div>
+</div>
+
+<script>
+let step = 0;
+
+const pages = [
+  `
+  <h1>😸 Hello!</h1>
+  <p>This is a tiny Hello Kitty world…</p>
+  <div class="tap">Tap again 💖</div>
+  `,
+  `
+  <h1>🎆 New Year Magic</h1>
+  <p>The year is changing…<br>Something cute is coming ✨</p>
+  <div class="tap">Tap again 🎀</div>
+  `,
+  `
+  <h1>🌸 Sukkara</h1>
+  <p>Also known as…</p>
+  <div class="tap">Tap 😏</div>
+  `,
+  `
+  <h1>🎀 Nandushii</h1>
+  <p>Same soul. Same cuteness.<br>Just different vibes 😄</p>
+  <div class="tap">Tap again 💕</div>
+  `,
+  `
+  <h1>💖 A New Year Wish</h1>
+  <p>
+    May this New Year bring you:<br>
+    ✨ happiness<br>
+    🎀 peace<br>
+    🌸 love<br>
+    😸 lots of smiles
+  </p>
+  <div class="tap">One more tap… 🎁</div>
+  `,
+  `
+  <h1>🎆 Happy New Year 🎆</h1>
+  <p>
+    For <strong>Sukkara / Nandushii</strong><br><br>
+    May all your dreams come true 💖<br>
+    Hello Kitty believes in you 😸🎀
+  </p>
+  <div class="tap">🎉</div>
+  `
+];
+
+function nextPage() {
+  if (step < pages.length) {
+    document.getElementById("content").innerHTML = pages[step];
+    step++;
+  }
+}
+</script>
+
+</body>
+</html>
